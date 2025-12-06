@@ -16,7 +16,18 @@ The Producer exposes a REST API to publish messages to a Kafka topic.
 - Publishes message to Kafka with a key  
 - Logs **success** (topic, partition, offset)  
 - Logs **failure** (Kafka down / wrong bootstrap server / metadata timeout)  
-- Uses `CompletableFuture.whenComplete()` for async success/failure handling  
+- Uses `CompletableFuture.whenComplete()` for async success/failure handling
+
+### **Producer API Endpoint**
+http://localhost:8081/api/messages
+
+
+#### Sample Request Body
+```json
+{
+  "key": "user-123",
+  "payload": "Hello from Producer Service"
+}
 
 
 
